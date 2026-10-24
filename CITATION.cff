@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this code, cite the associated manuscript when bibliographic details are confirmed."
+title: "Planar vortex and horizontal interscale-transfer MATLAB methods"
+version: "1.0-rc3"
+type: software
+authors:
+  - family-names: Liang
+    given-names: Jinming
+abstract: "Reference numerical methods for 2C near-surface flow diagnostics, not yet a complete paper-figure reproduction artifact."
