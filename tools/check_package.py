@@ -20,7 +20,7 @@ for line in (root/'SHA256SUMS.txt').read_text().splitlines():
     digest,name=line.split('  ',1);expected[name]=digest
 actual={}
 for p in sorted(root.rglob('*')):
-    if p.is_file() and p.name!='SHA256SUMS.txt':
+    if p.is_file() and p.name!='SHA256SUMS.txt' and '.git' not in p.relative_to(root).parts:
         actual[p.relative_to(root).as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()
 assert actual==expected,'SHA256 source manifest mismatch (missing/modified/extra source).'
 print('PASS: source structure, no old drive paths, figure mapping, SHA256.')
