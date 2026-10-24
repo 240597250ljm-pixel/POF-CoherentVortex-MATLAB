@@ -1,5 +1,3 @@
-<PARSED TEXT FOR SHEET: 1 / 1 TABS
-TAB NAME: FIGURE_PROVENANCE.csv>
 index,PaperItem,Topic,SoftwareCoverage
 0,Main Fig. 1,Experimental apparatus,NO computational source; prepared separately
 1,Main Fig. 2,Velocity fields,Calibrated PIV input required; script in legacy archive
