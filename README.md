@@ -1,6 +1,6 @@
-# Planar vortex organization and horizontal interscale transfer (MATLAB)
+ Planar vortex organization and horizontal interscale transfer (MATLAB)
 
-**Version 1.0-rc3 — method-consistent reference implementation / public source snapshot (no reuse license yet).**
+**Version 1.0-rc3 — method-consistent reference implementation / public source snapshot.**
 
 This MATLAB package provides a **unit-safe, modular reference implementation** of the principal methods described in the October 24, 2026 revision of *“Coherent-vortex reorganization and near-field localization of horizontal interscale-transfer activity in buoyancy-driven free-surface turbulence”* (*Physics of Fluids* manuscript). It intentionally does **not** claim that the generated code has reproduced the frozen paper figures. This is a methods audit, not a guarantee that every experimental or historical implementation is free of error. Scientific numerical regression using the authors' raw data remains separate from synthetic method tests.
 
