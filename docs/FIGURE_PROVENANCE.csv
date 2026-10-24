@@ -1,0 +1,27 @@
+<PARSED TEXT FOR SHEET: 1 / 1 TABS
+TAB NAME: FIGURE_PROVENANCE.csv>
+index,PaperItem,Topic,SoftwareCoverage
+0,Main Fig. 1,Experimental apparatus,NO computational source; prepared separately
+1,Main Fig. 2,Velocity fields,Calibrated PIV input required; script in legacy archive
+2,Main Fig. 3,Planar Liutex plots,reference/ redraw source; requires frozen inputs and frame IDs
+3,Main Fig. 4,Vortex distributions,reference/ Fig04 from CSV MBB10; exact frozen CSV not bundled
+4,Main Fig. 5,Vortex CCDF,pof.detectVortices supplies per-core quantities; final CSV/plot provenance not bundled
+5,Main Fig. 6,Voronoi statistics,"pof.voronoiBounded, reference/ bounded 81773 CSV script"
+6,Main Fig. 7,Scale-wise horizontal Π,pof.horizontalFlux; final statistical plot producer not bundled
+7,Main Fig. 8,Third-order S3L,pof.structureFunctionS3 + frame MBB; final figure producer not bundled
+8,Main Fig. 9,Instantaneous Π fields,pof.horizontalFlux; final frame IDs and plot producer not bundled
+9,Main Fig. 10,Vortex near-field activity and negative contributions,pof.nearFieldMasks / nearFieldStats; final plot producer not bundled
+10,SI S1,Frame convergence,Frame statistics required; old full audit in separate historical archive
+11,SI S2,Regional conditioning / schematic,pof.nearFieldMasks supports regions; final panels not bundled
+12,SI S3,Boundary and scale sensitivity,pof.nearFieldMasks / horizontalFlux; final producer not bundled
+13,SI S4,Strong Liutex R90 contributions,pof.strongLiutexStats; final panels not bundled
+14,SI S5,Voronoi maps and Poisson references,pof.voronoiBounded; Poisson null sample production in legacy source
+15,SI S6,Gradient-strain matching,pof.matchGradientStrain; old embedded 81775-summary renderer EXCLUDED
+16,SI S7,Negative-event decomposition,pof.nearFieldStats; old embedded 81775-summary renderer EXCLUDED
+17,SI S8,Independent-day comparison,"unit-safe interface, final WPA summary files not bundled"
+18,SI Table S1,Thermal conditions,Experimental measurements; manual record
+19,SI Table S2,PIV/method parameters,Manuscript metadata; current defaults documented
+20,SI Table S3,Filter/support statistics,pof.horizontalFlux; original per-frame data not bundled
+21,SI Table S4,Gradient/strain matched results,pof.matchGradientStrain; paper numerical results not bundled
+22,SI Table S5,ACF/effective N,Original historical stationarity analysis separate
+23,SI Table S6,Per-frame P80 threshold,pof.detectVortices on frozen 2935 frames; not bundled
