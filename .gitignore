@@ -1,0 +1,16 @@
+*.asv
+*.mat
+*.fig
+*.tif
+*.tiff
+*.png
+*.pdf
+*.log
+*.bak
+**/OUTPUT*/
+**/external_data/
+**/results/
+**/data_private/
+*.vec
+*.dat
+*.zip
