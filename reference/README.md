@@ -1,0 +1,3 @@
+# Reference scripts — manual provenance inspection only
+
+These three original research scripts have been copied without modifying their scientific algorithms. They are **not** included in `run_pof` or auto-added to the MATLAB path. Some retain historical absolute data paths and require frozen CSVs and figure frame IDs. They should **not** be interpreted as tested final paper figure producers. The callable supported API lives in `+pof/`. For older scripts with known repeated unit conversion, IID bootstrap, 81775 catalogs or unresolved historical provenance, use the separately archived v1.0-rc1 sources.
