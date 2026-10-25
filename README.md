@@ -1,6 +1,6 @@
  Planar vortex organization and horizontal interscale transfer (MATLAB)
 
-**Version 1.0-rc3 — method-consistent reference implementation / public source snapshot.**
+**Version 1.0-rc4 — manuscript-aligned method reference / public source snapshot.**
 
 This MATLAB package provides a **unit-safe, modular reference implementation** of the principal methods described in the October 24, 2026 revision of *“Coherent-vortex reorganization and near-field localization of horizontal interscale-transfer activity in buoyancy-driven free-surface turbulence”* (*Physics of Fluids* manuscript). It intentionally does **not** claim that the generated code has reproduced the frozen paper figures. This is a methods audit, not a guarantee that every experimental or historical implementation is free of error. Scientific numerical regression using the authors' raw data remains separate from synthetic method tests.
 
@@ -36,7 +36,7 @@ Units: 0604 VEC U/V are already m/s; 0605 U/V are pixel displacements per 50μs,
 
 ### Deliberately explicit preprocessing
 
-The current methods manuscript describes removal of the per-frame mean, Gaussian filtering at filter FWHM ℓ and 3σ valid-support truncation. Older analysis scripts additionally apply Gaussian **velocity pre-smoothing** at sigma=0.8 vector-grid cells. These are different operations. Accordingly, `horizontalFlux` defaults to `preSmoothSigmaCells=0` and offers the historical 0.8 explicitly; it does **not** claim either choice was numerically regression-matched to the frozen Fig. 7/9/10 data. The **Liutex** smoothing of R at 0.8 cells *is* an explicitly documented vortex-detection operation. See `docs/METHOD_ALIGNMENT.md` for the remaining paper-implementation provenance question.
+Manuscript Sec. II E and Supplementary Methods Sec. 1.1 specify two distinct steps after subtracting the frame-wise spatial mean: **velocity pre-smoothing** of U,V at sigma=0.8 vector-grid cells (discrete normalized symmetric kernel, ±4σ support), followed by **scale-dependent Gaussian coarse graining** at FWHM ℓ (±3σ support with 3σ valid-domain exclusion). Both `pof.horizontalFlux` and `pof.analyzeFrame` now default to the stated 0.8-cell pre-smoothing. Specify `opts.preSmoothSigmaCells=0` only to study the effect of omitting that preprocessing. Separately, Liutex vortex identification smooths the computed R field at sigma=0.8 cells; that operation is independent of velocity pre-smoothing. This is a documented **method-level reference**, not a certified numerical reproduction of all paper figures. See `docs/METHOD_ALIGNMENT.md`.
 
 ## Structure and provenance
 
@@ -54,9 +54,9 @@ Other 47 research/history source scripts from v1.0-rc1 are retained in a **separ
 - Nominal Ra_L values: [0.463 0.926 1.39 1.85 2.32 2.78]×10^9; paper primary cohort: 2,935 frames (498/499/499/492/470/477), 81,773 detected vortices.
 - Paper Gaussian FWHM ℓ: 11.03, 15.01, 20.43, 27.80, 37.83, 51.48 mm. Baseline near field: ρ≤1.5; 1.5<ρ≤2 excluded; background ρ>2.
 - Inverse-cascade claims, 3D energy-flux claims, causality of vortices, full 3D vortex topology and absolute small-displacement PIV precision are **not** supported by this package.
-- The software license and coauthor permission are **not yet decided**; see `LICENSE_PENDING.md`. Keep GitHub private until permission and scientific provenance questions are resolved.
+- The software license and coauthor permission are **not yet decided**; see `LICENSE_PENDING.md`. The repository is currently public; a software reuse license and any further permissions remain pending (see `LICENSE_PENDING.md`).
 
-**This is an uploadable private GitHub repository, not yet a certified exact-reproduction artifact.**
+**This public GitHub source repository provides inspectable reference routines, not certified end-to-end reproduction of the manuscript figures.**
 
 **Kernel convention:** final Fig04/05 Liutex R smoothing uses a normalized ±4σ finite kernel; Gaussian coarse-graining for Πℓ uses ±3σ with a 3σ valid-domain exclusion. Vortex centers are geometric centroids, not intensity-weighted. See `docs/METHOD_AUDIT.md`.
 
