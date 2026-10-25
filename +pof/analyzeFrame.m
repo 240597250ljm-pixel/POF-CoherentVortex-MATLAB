@@ -4,7 +4,8 @@ function out = analyzeFrame(F,opts)
 % This is NOT a manuscript figure reproducer; no raw PIV QC is performed.
 if nargin<2,opts=struct();end
 if ~isfield(opts,'ell_m'),opts.ell_m=20.43e-3;end
-if ~isfield(opts,'preSmoothSigmaCells'),opts.preSmoothSigmaCells=0;end
+if ~isfield(opts,'preSmoothSigmaCells'),opts.preSmoothSigmaCells=0.8;end
+% Default matches Manuscript II E and SI 1.1; set 0 explicitly for sensitivity.
 needed={'X','Y','U','V','dx','dy'};
 for k=1:numel(needed)
     assert(isfield(F,needed{k}),'F missing %s',needed{k});
