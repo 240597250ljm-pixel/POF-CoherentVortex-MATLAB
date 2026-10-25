@@ -22,4 +22,4 @@ strong=pof.strongLiutexStats(R,piell,valid);
 [medianRatio,CI]=pof.movingBlockCI(activityRatioPerFrame,10,3000,20261022);
 ```
 
-The main paper's full producer requires original accepted-frame masks and specific historical preprocessing choices; this example is a method tutorial and does not write a manuscript-numbered figure.
+Default `horizontalFlux`/`analyzeFrame` behavior includes manuscript-specified U/V pre-smoothing (σ=0.8 grid cells), followed by a separate FWHM-ell coarse graining. Set `struct('preSmoothSigmaCells',0)` explicitly to examine the no-pre-smoothing sensitivity case. The main paper's full producer also requires original accepted-frame masks and provenance information; this tutorial does not generate a manuscript-numbered figure.
