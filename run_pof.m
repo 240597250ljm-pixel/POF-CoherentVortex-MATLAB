@@ -7,7 +7,7 @@ addpath(fullfile(root,'io'),fullfile(root,'config'),fullfile(root,'tests'));
 command=lower(char(command));
 switch command
  case 'status'
-    out=struct('version','1.0-rc3','implementation','reference-methods', ...
+    out=struct('version','1.0-rc4','implementation','reference-methods', ...
        'productionFiguresCertified',false,'scienceRegressionTested',false);
     fprintf('POF reference methods v%s | no historical computation auto-run.\n',out.version);
     fprintf('Synthetic tests: run_pof(''test''); code is NOT a certified figure reproduction.\n');
