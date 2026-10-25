@@ -17,7 +17,7 @@ p.bootstrapBlock=10;p.bootstrapReplicates=3000;
 p.voronoiNullReplicates=[12 24 24 12];
 p.voronoiNullExclusionFactors=[0 0 0.5 0.75];
 p.structureFunctionBins=14;
-p.velocityPreSmoothSigmaCells=0; % Paper text does not specify legacy extra 0.8 prefilter
-p.velocityPreSmoothHistoricalOption=0.8;
+p.velocityPreSmoothSigmaCells=0.8; % Manuscript II E/SI 1.1 velocity pre-smoothing
+p.velocityPreSmoothKernelTruncationSigma=4; % separate from 3-sigma ell filter
 p.isFullThreeDimensionalFlux=false;
 end
