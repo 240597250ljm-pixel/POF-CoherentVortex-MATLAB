@@ -1,6 +1,6 @@
 # Scientific method and definition audit (v1.0-rc3)
 
-**Scope:** static, line-level comparison of callable MATLAB methods in `+pof/` against `Manuscript1024v1.docx` and `Supplementary material 1024v1.docx` (both dated October 24, 2026), plus relevant final Fig04/Fig05 production-source snippets. Does not require proprietary raw PIV files and does not assert exact frame-by-frame production output.
+**Scope:** static, line-level comparison of callable MATLAB methods in `+pof/` against the October 24 revised manuscript and supplementary methods (both dated October 24, 2026), plus relevant final Fig04/Fig05 production-source snippets. Does not require proprietary raw PIV files and does not assert exact frame-by-frame production output.
 
 | Method | Mathematical definition / correspondence | Status |
 |---|---|---|
@@ -20,11 +20,11 @@
 
 1. Methods are scientifically interpretable, but dimensional limitations remain: 2D–2C observations do not yield a full 3D Liutex vector or true 3D energy-cascade flux.
 2. There is no universal claim of unique or causally privileged vortex influence; gradient/strain matching indicates a shared kinematic dependence.
-3. A **historical velocity prefilter** at σ=0.8 was used by some original transfer analysis scripts but is not described in manuscript Section II E. It is **not part of the default method**. Explicit option triggers a warning and is not claimed to reproduce the manuscript plots.
+3. Revised Manuscript II E and SI Sec. 1.1 explicitly state U/V velocity pre-smoothing at σ=0.8 grid cells prior to separate ℓ-dependent coarse graining. This is the **default reference method**; disable it explicitly with `preSmoothSigmaCells=0` for sensitivity comparison. Exact figure-output numerical regression has not been performed.
 4. Synthetic unit tests verify some mathematical identities. They cannot prove numerical measurement accuracy, full MATLAB runtime compatibility without execution, or the absence of all implementation defects.
 5. The published Fig04/Fig05 producer uses a geometric centroid (MATLAB `regionprops('Centroid')`), and R-smoothing 4σ kernel support. Both are implemented in this revised reference package. Raw velocity fields and final output files remain intentionally excluded.
 6. The release deliberately does NOT supply a certified full-paper figure-generation pipeline; it supplies defensible, inspectable method kernels consistent with the stated paper definitions.
 
 ### Scientific readiness verdict
 
-**Approved for private upload as a method-level source release candidate subject to a local `run_pof('test')` pass.** This is not an unconditional guarantee that the entire historical paper computation has zero errors. The two identified rc2 mismatches are corrected in rc3. Public open-source release separately requires permission and a license.
+**Public method-level reference source, subject to a local `run_pof('test')` pass and scientific numerical regression before claiming exact paper reproduction.** This is not an unconditional guarantee that the entire historical paper computation has zero errors. The two identified rc2 mismatches are corrected in rc3. Public open-source release separately requires permission and a license.
